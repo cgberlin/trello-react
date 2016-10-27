@@ -8,9 +8,9 @@ var List = function(props) {
       <Card text = "asdadasd"/>{props.cardContent}
       <Card text = "aaaaaaaa"/>{props.cardContent}
       <Card text = "asaaaaa"/>{props.cardContent}
-      <form className = "list-form" onChange = {props.onAddInputChanged}>
-        <input type = "text"></input>
-        <button type = "submit" onSubmit={props.onAddSubmit}>Submit</button>
+      <form className = "list-form">
+        <input type = "text"  onChange = {props.onAddInputChanged}></input>
+        <button type = "submit" onClick={props.onAddSubmit}>Submit</button>
       </form>
     </div>
   );
