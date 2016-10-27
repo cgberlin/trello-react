@@ -4,10 +4,7 @@ import Card from './card';
 
 var List = function(props) {
   return (
-    <div className = "card-list">{props.listTitle}
-      <Card text = "asdadasd"/>{props.cardContent}
-      <Card text = "aaaaaaaa"/>{props.cardContent}
-      <Card text = "asaaaaa"/>{props.cardContent}
+    <div className = "card-list">{props.listTitle}{props.cards}
       <form className = "list-form">
         <input type = "text"  onChange = {props.onAddInputChanged}></input>
         <button type = "submit" onClick={props.onAddSubmit}>Submit</button>
