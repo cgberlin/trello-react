@@ -4,11 +4,15 @@ import Card from './card';
 import List from './list'
 
 var ListContainer = React.createClass({
-  text : '',
-  cardsInList : [],
-  render : function(cardsInList){
-    return <List cards = {this.cardsInList} onAddInputChanged = {(event) => {this.text = event.target.value}}
-                                            onAddSubmit = {(event) => {this.cardsInList.push(<Card text = {this.text}/>); event.preventDefault(); console.log(this.cardsInList)}} />
+  getInitialState: function() {
+      return {
+          text : '',
+          cardsInList : []
+      }
+    },
+  render : function(){
+    return <List cards = {this.state.cardsInList} onAddInputChanged = {(event) => {this.state.text = event.target.value}}
+                                            onAddSubmit = {(event) => {this.state.cardsInList.push(<Card text = {this.state.text}/>); event.preventDefault(); console.log(this.state.cardsInList)}} />
   }
 });
 
