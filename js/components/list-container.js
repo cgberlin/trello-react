@@ -10,9 +10,12 @@ var ListContainer = React.createClass({
           cardsInList : []
       }
     },
+  updateState: function(){
+    this.setState(this.state);
+  },
   render : function(){
-    return <List cards = {this.state.cardsInList} onAddInputChanged = {(event) => {this.state.text = event.target.value}}
-                                            onAddSubmit = {(event) => {this.state.cardsInList.push(<Card text = {this.state.text}/>); event.preventDefault(); console.log(this.state.cardsInList)}} />
+    return <List listTitle = "list" cards = {this.state.cardsInList} onAddInputChanged = {(event) => {this.state.text = event.target.value}}
+                                            onAddSubmit = {(event) => {this.state.cardsInList.push(<Card text = {this.state.text}/>); event.preventDefault(); this.updateState()}} />
   }
 });
 
