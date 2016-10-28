@@ -7,6 +7,7 @@ var Board = function(props) {
   return (
     <div className = "board">{props.boardTitle}
       <ListContainer />
+      <ListContainer />
     </div>
   );
 };
